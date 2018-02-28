@@ -14,7 +14,6 @@ public  final class CommitRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.CommitRequest)
     CommitRequestOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use CommitRequest.newBuilder() to construct.
   private CommitRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -27,7 +26,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private CommitRequest(
       com.google.protobuf.CodedInputStream input,
@@ -35,8 +34,6 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -46,8 +43,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
@@ -97,7 +93,6 @@ private static final long serialVersionUID = 0L;
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         mutations_ = java.util.Collections.unmodifiableList(mutations_);
       }
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -225,24 +220,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
    */
-  public boolean hasSingleUseTransaction() {
-    return transactionCase_ == 3;
-  }
-  /**
-   * <pre>
-   * Execute mutations in a temporary transaction. Note that unlike
-   * commit of a previously-started transaction, commit with a
-   * temporary transaction is non-idempotent. That is, if the
-   * `CommitRequest` is sent to Cloud Spanner more than once (for
-   * instance, due to retries in the application, or in the
-   * transport library), it is possible that the mutations are
-   * executed more than once. If this is undesirable, use
-   * [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction] and
-   * [Commit][google.spanner.v1.Spanner.Commit] instead.
-   * </pre>
-   *
-   * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
-   */
   public com.google.spanner.v1.TransactionOptions getSingleUseTransaction() {
     if (transactionCase_ == 3) {
        return (com.google.spanner.v1.TransactionOptions) transaction_;
@@ -353,7 +330,7 @@ private static final long serialVersionUID = 0L;
     }
     if (transactionCase_ == 2) {
       output.writeBytes(
-          2, (com.google.protobuf.ByteString) transaction_);
+          2, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) transaction_));
     }
     if (transactionCase_ == 3) {
       output.writeMessage(3, (com.google.spanner.v1.TransactionOptions) transaction_);
@@ -361,7 +338,6 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < mutations_.size(); i++) {
       output.writeMessage(4, mutations_.get(i));
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -375,7 +351,7 @@ private static final long serialVersionUID = 0L;
     if (transactionCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(
-            2, (com.google.protobuf.ByteString) transaction_);
+            2, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) transaction_));
     }
     if (transactionCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
@@ -385,11 +361,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, mutations_.get(i));
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -420,7 +396,6 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -454,17 +429,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.CommitRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.google.spanner.v1.CommitRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static com.google.spanner.v1.CommitRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -648,7 +612,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -661,12 +625,12 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -723,7 +687,6 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -902,24 +865,6 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.spanner.v1.TransactionOptions, com.google.spanner.v1.TransactionOptions.Builder, com.google.spanner.v1.TransactionOptionsOrBuilder> singleUseTransactionBuilder_;
-    /**
-     * <pre>
-     * Execute mutations in a temporary transaction. Note that unlike
-     * commit of a previously-started transaction, commit with a
-     * temporary transaction is non-idempotent. That is, if the
-     * `CommitRequest` is sent to Cloud Spanner more than once (for
-     * instance, due to retries in the application, or in the
-     * transport library), it is possible that the mutations are
-     * executed more than once. If this is undesirable, use
-     * [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction] and
-     * [Commit][google.spanner.v1.Spanner.Commit] instead.
-     * </pre>
-     *
-     * <code>.google.spanner.v1.TransactionOptions single_use_transaction = 3;</code>
-     */
-    public boolean hasSingleUseTransaction() {
-      return transactionCase_ == 3;
-    }
     /**
      * <pre>
      * Execute mutations in a temporary transaction. Note that unlike
@@ -1493,12 +1438,12 @@ private static final long serialVersionUID = 0L;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 

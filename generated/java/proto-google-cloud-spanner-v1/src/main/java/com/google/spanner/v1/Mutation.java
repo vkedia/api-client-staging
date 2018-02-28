@@ -16,7 +16,6 @@ public  final class Mutation extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.Mutation)
     MutationOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use Mutation.newBuilder() to construct.
   private Mutation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -27,7 +26,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private Mutation(
       com.google.protobuf.CodedInputStream input,
@@ -35,8 +34,6 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -46,8 +43,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
@@ -130,7 +126,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -306,7 +301,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:google.spanner.v1.Mutation.Write)
       WriteOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use Write.newBuilder() to construct.
     private Write(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -320,7 +314,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private Write(
         com.google.protobuf.CodedInputStream input,
@@ -328,8 +322,6 @@ private static final long serialVersionUID = 0L;
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -339,8 +331,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -383,7 +374,6 @@ private static final long serialVersionUID = 0L;
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           values_ = java.util.Collections.unmodifiableList(values_);
         }
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -610,7 +600,6 @@ private static final long serialVersionUID = 0L;
       for (int i = 0; i < values_.size(); i++) {
         output.writeMessage(3, values_.get(i));
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -633,11 +622,11 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, values_.get(i));
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -655,7 +644,6 @@ private static final long serialVersionUID = 0L;
           .equals(other.getColumnsList());
       result = result && getValuesList()
           .equals(other.getValuesList());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -681,17 +669,6 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.spanner.v1.Mutation.Write parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.spanner.v1.Mutation.Write parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.google.spanner.v1.Mutation.Write parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -870,7 +847,7 @@ private static final long serialVersionUID = 0L;
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -883,12 +860,12 @@ private static final long serialVersionUID = 0L;
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -942,7 +919,6 @@ private static final long serialVersionUID = 0L;
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1655,12 +1631,12 @@ private static final long serialVersionUID = 0L;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1766,7 +1742,6 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:google.spanner.v1.Mutation.Delete)
       DeleteOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use Delete.newBuilder() to construct.
     private Delete(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1778,7 +1753,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private Delete(
         com.google.protobuf.CodedInputStream input,
@@ -1786,8 +1761,6 @@ private static final long serialVersionUID = 0L;
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1797,8 +1770,7 @@ private static final long serialVersionUID = 0L;
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1830,7 +1802,6 @@ private static final long serialVersionUID = 0L;
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1945,7 +1916,6 @@ private static final long serialVersionUID = 0L;
       if (keySet_ != null) {
         output.writeMessage(2, getKeySet());
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -1960,11 +1930,11 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getKeySet());
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1983,7 +1953,6 @@ private static final long serialVersionUID = 0L;
         result = result && getKeySet()
             .equals(other.getKeySet());
       }
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2005,17 +1974,6 @@ private static final long serialVersionUID = 0L;
       return hash;
     }
 
-    public static com.google.spanner.v1.Mutation.Delete parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.spanner.v1.Mutation.Delete parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static com.google.spanner.v1.Mutation.Delete parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2178,7 +2136,7 @@ private static final long serialVersionUID = 0L;
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2191,12 +2149,12 @@ private static final long serialVersionUID = 0L;
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2217,7 +2175,6 @@ private static final long serialVersionUID = 0L;
         if (other.hasKeySet()) {
           mergeKeySet(other.getKeySet());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2505,12 +2462,12 @@ private static final long serialVersionUID = 0L;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -2605,17 +2562,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.spanner.v1.Mutation.Write insert = 1;</code>
    */
-  public boolean hasInsert() {
-    return operationCase_ == 1;
-  }
-  /**
-   * <pre>
-   * Insert new rows in a table. If any of the rows already exist,
-   * the write or transaction fails with error `ALREADY_EXISTS`.
-   * </pre>
-   *
-   * <code>.google.spanner.v1.Mutation.Write insert = 1;</code>
-   */
   public com.google.spanner.v1.Mutation.Write getInsert() {
     if (operationCase_ == 1) {
        return (com.google.spanner.v1.Mutation.Write) operation_;
@@ -2646,17 +2592,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.spanner.v1.Mutation.Write update = 2;</code>
    */
-  public boolean hasUpdate() {
-    return operationCase_ == 2;
-  }
-  /**
-   * <pre>
-   * Update existing rows in a table. If any of the rows does not
-   * already exist, the transaction fails with error `NOT_FOUND`.
-   * </pre>
-   *
-   * <code>.google.spanner.v1.Mutation.Write update = 2;</code>
-   */
   public com.google.spanner.v1.Mutation.Write getUpdate() {
     if (operationCase_ == 2) {
        return (com.google.spanner.v1.Mutation.Write) operation_;
@@ -2679,18 +2614,6 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INSERT_OR_UPDATE_FIELD_NUMBER = 3;
-  /**
-   * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-   * its column values are overwritten with the ones provided. Any
-   * column values not explicitly written are preserved.
-   * </pre>
-   *
-   * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
-   */
-  public boolean hasInsertOrUpdate() {
-    return operationCase_ == 3;
-  }
   /**
    * <pre>
    * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
@@ -2733,19 +2656,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
    */
-  public boolean hasReplace() {
-    return operationCase_ == 4;
-  }
-  /**
-   * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-   * deleted, and the column values provided are inserted
-   * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-   * explicitly written become `NULL`.
-   * </pre>
-   *
-   * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
-   */
   public com.google.spanner.v1.Mutation.Write getReplace() {
     if (operationCase_ == 4) {
        return (com.google.spanner.v1.Mutation.Write) operation_;
@@ -2770,17 +2680,6 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DELETE_FIELD_NUMBER = 5;
-  /**
-   * <pre>
-   * Delete rows from a table. Succeeds whether or not the named
-   * rows were present.
-   * </pre>
-   *
-   * <code>.google.spanner.v1.Mutation.Delete delete = 5;</code>
-   */
-  public boolean hasDelete() {
-    return operationCase_ == 5;
-  }
   /**
    * <pre>
    * Delete rows from a table. Succeeds whether or not the named
@@ -2837,7 +2736,6 @@ private static final long serialVersionUID = 0L;
     if (operationCase_ == 5) {
       output.writeMessage(5, (com.google.spanner.v1.Mutation.Delete) operation_);
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -2865,11 +2763,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.google.spanner.v1.Mutation.Delete) operation_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -2908,7 +2806,6 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -2948,17 +2845,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.Mutation parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.google.spanner.v1.Mutation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static com.google.spanner.v1.Mutation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3147,7 +3033,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -3160,12 +3046,12 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3204,7 +3090,6 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -3248,17 +3133,6 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.spanner.v1.Mutation.Write, com.google.spanner.v1.Mutation.Write.Builder, com.google.spanner.v1.Mutation.WriteOrBuilder> insertBuilder_;
-    /**
-     * <pre>
-     * Insert new rows in a table. If any of the rows already exist,
-     * the write or transaction fails with error `ALREADY_EXISTS`.
-     * </pre>
-     *
-     * <code>.google.spanner.v1.Mutation.Write insert = 1;</code>
-     */
-    public boolean hasInsert() {
-      return operationCase_ == 1;
-    }
     /**
      * <pre>
      * Insert new rows in a table. If any of the rows already exist,
@@ -3429,17 +3303,6 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.spanner.v1.Mutation.Write, com.google.spanner.v1.Mutation.Write.Builder, com.google.spanner.v1.Mutation.WriteOrBuilder> updateBuilder_;
-    /**
-     * <pre>
-     * Update existing rows in a table. If any of the rows does not
-     * already exist, the transaction fails with error `NOT_FOUND`.
-     * </pre>
-     *
-     * <code>.google.spanner.v1.Mutation.Write update = 2;</code>
-     */
-    public boolean hasUpdate() {
-      return operationCase_ == 2;
-    }
     /**
      * <pre>
      * Update existing rows in a table. If any of the rows does not
@@ -3619,18 +3482,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
      */
-    public boolean hasInsertOrUpdate() {
-      return operationCase_ == 3;
-    }
-    /**
-     * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
-     * </pre>
-     *
-     * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
-     */
     public com.google.spanner.v1.Mutation.Write getInsertOrUpdate() {
       if (insertOrUpdateBuilder_ == null) {
         if (operationCase_ == 3) {
@@ -3800,19 +3651,6 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.spanner.v1.Mutation.Write, com.google.spanner.v1.Mutation.Write.Builder, com.google.spanner.v1.Mutation.WriteOrBuilder> replaceBuilder_;
-    /**
-     * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
-     * </pre>
-     *
-     * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
-     */
-    public boolean hasReplace() {
-      return operationCase_ == 4;
-    }
     /**
      * <pre>
      * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
@@ -4007,17 +3845,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.spanner.v1.Mutation.Delete delete = 5;</code>
      */
-    public boolean hasDelete() {
-      return operationCase_ == 5;
-    }
-    /**
-     * <pre>
-     * Delete rows from a table. Succeeds whether or not the named
-     * rows were present.
-     * </pre>
-     *
-     * <code>.google.spanner.v1.Mutation.Delete delete = 5;</code>
-     */
     public com.google.spanner.v1.Mutation.Delete getDelete() {
       if (deleteBuilder_ == null) {
         if (operationCase_ == 5) {
@@ -4179,12 +4006,12 @@ private static final long serialVersionUID = 0L;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 

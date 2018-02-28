@@ -17,7 +17,6 @@ public  final class TransactionSelector extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.TransactionSelector)
     TransactionSelectorOrBuilder {
-private static final long serialVersionUID = 0L;
   // Use TransactionSelector.newBuilder() to construct.
   private TransactionSelector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
@@ -28,7 +27,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet
   getUnknownFields() {
-    return this.unknownFields;
+    return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
   }
   private TransactionSelector(
       com.google.protobuf.CodedInputStream input,
@@ -36,8 +35,6 @@ private static final long serialVersionUID = 0L;
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
     int mutable_bitField0_ = 0;
-    com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-        com.google.protobuf.UnknownFieldSet.newBuilder();
     try {
       boolean done = false;
       while (!done) {
@@ -47,8 +44,7 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
+            if (!input.skipField(tag)) {
               done = true;
             }
             break;
@@ -94,7 +90,6 @@ private static final long serialVersionUID = 0L;
       throw new com.google.protobuf.InvalidProtocolBufferException(
           e).setUnfinishedMessage(this);
     } finally {
-      this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
@@ -160,18 +155,6 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
    */
-  public boolean hasSingleUse() {
-    return selectorCase_ == 1;
-  }
-  /**
-   * <pre>
-   * Execute the read or SQL query in a temporary transaction.
-   * This is the most efficient way to execute a transaction that
-   * consists of a single SQL query.
-   * </pre>
-   *
-   * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
-   */
   public com.google.spanner.v1.TransactionOptions getSingleUse() {
     if (selectorCase_ == 1) {
        return (com.google.spanner.v1.TransactionOptions) selector_;
@@ -210,18 +193,6 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int BEGIN_FIELD_NUMBER = 3;
-  /**
-   * <pre>
-   * Begin a new transaction and execute this read or SQL query in
-   * it. The transaction ID of the new transaction is returned in
-   * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
-   * </pre>
-   *
-   * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
-   */
-  public boolean hasBegin() {
-    return selectorCase_ == 3;
-  }
   /**
    * <pre>
    * Begin a new transaction and execute this read or SQL query in
@@ -270,12 +241,11 @@ private static final long serialVersionUID = 0L;
     }
     if (selectorCase_ == 2) {
       output.writeBytes(
-          2, (com.google.protobuf.ByteString) selector_);
+          2, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) selector_));
     }
     if (selectorCase_ == 3) {
       output.writeMessage(3, (com.google.spanner.v1.TransactionOptions) selector_);
     }
-    unknownFields.writeTo(output);
   }
 
   public int getSerializedSize() {
@@ -290,17 +260,17 @@ private static final long serialVersionUID = 0L;
     if (selectorCase_ == 2) {
       size += com.google.protobuf.CodedOutputStream
         .computeBytesSize(
-            2, (com.google.protobuf.ByteString) selector_);
+            2, (com.google.protobuf.ByteString)((com.google.protobuf.ByteString) selector_));
     }
     if (selectorCase_ == 3) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(3, (com.google.spanner.v1.TransactionOptions) selector_);
     }
-    size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
   }
 
+  private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
@@ -331,7 +301,6 @@ private static final long serialVersionUID = 0L;
       case 0:
       default:
     }
-    result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
 
@@ -363,17 +332,6 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.TransactionSelector parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data);
-  }
-  public static com.google.spanner.v1.TransactionSelector parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws com.google.protobuf.InvalidProtocolBufferException {
-    return PARSER.parseFrom(data, extensionRegistry);
-  }
   public static com.google.spanner.v1.TransactionSelector parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -545,7 +503,7 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.setField(field, value);
     }
     public Builder clearField(
@@ -558,12 +516,12 @@ private static final long serialVersionUID = 0L;
     }
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        int index, Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -594,7 +552,6 @@ private static final long serialVersionUID = 0L;
           break;
         }
       }
-      this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
@@ -638,18 +595,6 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.spanner.v1.TransactionOptions, com.google.spanner.v1.TransactionOptions.Builder, com.google.spanner.v1.TransactionOptionsOrBuilder> singleUseBuilder_;
-    /**
-     * <pre>
-     * Execute the read or SQL query in a temporary transaction.
-     * This is the most efficient way to execute a transaction that
-     * consists of a single SQL query.
-     * </pre>
-     *
-     * <code>.google.spanner.v1.TransactionOptions single_use = 1;</code>
-     */
-    public boolean hasSingleUse() {
-      return selectorCase_ == 1;
-    }
     /**
      * <pre>
      * Execute the read or SQL query in a temporary transaction.
@@ -882,18 +827,6 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
      */
-    public boolean hasBegin() {
-      return selectorCase_ == 3;
-    }
-    /**
-     * <pre>
-     * Begin a new transaction and execute this read or SQL query in
-     * it. The transaction ID of the new transaction is returned in
-     * [ResultSetMetadata.transaction][google.spanner.v1.ResultSetMetadata.transaction], which is a [Transaction][google.spanner.v1.Transaction].
-     * </pre>
-     *
-     * <code>.google.spanner.v1.TransactionOptions begin = 3;</code>
-     */
     public com.google.spanner.v1.TransactionOptions getBegin() {
       if (beginBuilder_ == null) {
         if (selectorCase_ == 3) {
@@ -1062,12 +995,12 @@ private static final long serialVersionUID = 0L;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.setUnknownFieldsProto3(unknownFields);
+      return this;
     }
 
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
-      return super.mergeUnknownFields(unknownFields);
+      return this;
     }
 
 

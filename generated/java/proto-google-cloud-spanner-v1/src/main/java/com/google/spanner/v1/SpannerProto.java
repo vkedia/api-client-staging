@@ -251,11 +251,10 @@ public final class SpannerProto {
       "equest\032$.google.spanner.v1.PartitionResp" +
       "onse\"T\202\323\344\223\002N\"I/v1/{session=projects/*/in" +
       "stances/*/databases/*/sessions/*}:partit" +
-      "ionRead:\001*B\225\001\n\025com.google.spanner.v1B\014Sp" +
-      "annerProtoP\001Z8google.golang.org/genproto",
-      "/googleapis/spanner/v1;spanner\252\002\027Google." +
-      "Cloud.Spanner.V1\312\002\027Google\\Cloud\\Spanner\\" +
-      "V1b\006proto3"
+      "ionRead:\001*B{\n\025com.google.spanner.v1B\014Spa" +
+      "nnerProtoP\001Z8google.golang.org/genproto/",
+      "googleapis/spanner/v1;spanner\252\002\027Google.C" +
+      "loud.Spanner.V1b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
